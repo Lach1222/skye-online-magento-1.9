@@ -4,8 +4,8 @@
     <!-- Module Metadata -->
     <modules>
         <Skye_Skyepayments>
-            <version>skye_plugin_version_placeholder</version>
-        </Skye_Skyepayments>        
+            <version>1.0.1</version>
+        </Skye_Skyepayments>
     </modules>
     <!-- End Module Metadata -->
 
@@ -15,7 +15,7 @@
         <helpers>
             <skyepayments>
                 <class>Skye_Skyepayments_Helper</class>
-            </skyepayments>            
+            </skyepayments>
         </helpers>
 
         <!-- Partial View Controllers -->
@@ -23,13 +23,13 @@
             <skyepayments>
                 <!-- <module root>/[Form|Info]/Skyepayments.php -->
                 <class>Skye_Skyepayments_Block</class>
-            </skyepayments>            
+            </skyepayments>
         </blocks>
         <models>
             <!-- <module root/Model/Paymentmethod.php -->
             <skyepayments>
                 <class>Skye_Skyepayments_Model</class>
-            </skyepayments>            
+            </skyepayments>
         </models>
         <resources>
             <!-- <module root/sql/skyepayments_setup/install-<version number>.php -->

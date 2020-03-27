@@ -59,7 +59,6 @@
                         <default_product_offer translate="label">
                             <label>Default Product Offer</label>
                             <frontend_type>text</frontend_type>
-                            <validate>required-entry</validate>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>0</show_in_store>
@@ -68,7 +67,6 @@
                         <default_product_description translate="label">
                             <label>Default Product Description</label>
                             <frontend_type>text</frontend_type>
-                            <validate>required-entry</validate>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>0</show_in_store>
