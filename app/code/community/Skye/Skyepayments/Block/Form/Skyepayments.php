@@ -11,13 +11,13 @@ class Skye_Skyepayments_Block_Form_Skyepayments extends Mage_Payment_Block_Form
     const LOG_FILE = 'skye.log';
 
     protected function _construct()
-    {    	
+    {
         $mark = Mage::getConfig()->getBlockClassName('core/template');
         $mark = new $mark;
         $mark->setTemplate('skyepayments/mark.phtml');
         $this->setMethodLabelAfterHtml($mark->toHtml());
         parent::_construct();
-        $this->setTemplate('skyepayments/form.phtml');           
+        $this->setTemplate('skyepayments/form.phtml');
     }
 
     public function getDefaultProductOffer()
@@ -25,7 +25,7 @@ class Skye_Skyepayments_Block_Form_Skyepayments extends Mage_Payment_Block_Form
         $defaultOffer = Skye_Skyepayments_Helper_Data::getDefaultProductOffer();
         $merchantId = Skye_Skyepayments_Helper_Data::getMerchantNumber();
         $orderTotalAmount = Mage::getModel('checkout/cart')->getQuote()->getGrandTotal();
-        $service_url = 'https://um1fnbwix7.execute-api.ap-southeast-2.amazonaws.com/dev/?id='.$merchantId.'&amount='.$orderTotalAmount.'&callback=jsonpCallback';          
+        $service_url = 'https://seohn3f7dc.execute-api.ap-southeast-2.amazonaws.com/prod/'.$merchantId.'&amount='.$orderTotalAmount.'&callback=jsonpCallback';
         $data = file_get_contents($service_url);
          if($data[0] !== '[' && $data[0] !== '{') { // we have JSONP
             $data = substr($data, strpos($data, '('));
@@ -33,7 +33,7 @@ class Skye_Skyepayments_Block_Form_Skyepayments extends Mage_Payment_Block_Form
         $result = json_decode(trim($data,'();'), true);
         $data = trim($data,'();');
         return $data;
-    }       
+    }
 
     public function getCustomerProductOffer()
     {
